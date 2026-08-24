@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>About Us | Hub of Knowledge & Enlightenment Consultancy Firm</title>
+
+    <meta
+        name="description"
+        content="Learn about Hub of Knowledge and Enlightenment Consultancy Firm Sierra Leone Limited, our professional capacity, values, mission, vision and the organisations we serve."
+    >
+
+    <meta name="theme-color" content="#062f5f">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#2563eb',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            800: '#1e3a8a',
+                            900: '#172554'
+                        },
+
+                        navy: '#062f5f',
+                        gold: '#f4b41a',
+                        dark: '#0b172a'
+                    },
+
+                    fontFamily: {
+                        sans: [
+                            'Inter',
+                            'ui-sans-serif',
+                            'system-ui',
+                            'sans-serif'
+                        ]
+                    },
+
+                    boxShadow: {
+                        soft: '0 10px 40px rgba(15, 23, 42, 0.08)',
+                        card: '0 20px 60px rgba(15, 23, 42, 0.10)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .page-hero {
+            background:
+                linear-gradient(
+                    rgba(6, 47, 95, 0.94),
+                    rgba(6, 47, 95, 0.91)
+                ),
+                url('assets/images/engagement-2.jpg');
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+
+        .nav-shadow {
+            box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+        }
+
+        .image-overlay {
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(6, 47, 95, 0.8),
+                    transparent 70%
+                );
+        }
+
+    </style>
+</head>
+
+
+<body class="bg-white text-slate-800 antialiased">
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header
+    id="site-header"
+    class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100"
+>
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+
+        <div class="h-20 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a
+                href="index.html"
+                class="flex items-center gap-3"
+            >
+
+                <div
+                    class="w-12 h-12 rounded-xl overflow-hidden bg-white border border-slate-100 shadow-sm"
+                >
+
+                    <img
+                        src="images/FB_IMG_1787143330489.jpg"
+                        alt="Hub of Knowledge and Enlightenment Consultancy Firm"
+                        class="w-full h-full object-contain"
+                    >
+
+                </div>
+
+
+                <div class="hidden sm:block">
+
+                    <p class="font-extrabold text-sm text-navy leading-tight uppercase">
+                        Hub of Knowledge
+                    </p>
+
+                    <p class="text-[11px] font-semibold text-slate-500 leading-tight">
+                        & Enlightenment Consultancy Firm
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center gap-8">
+
+                <a
+                    href="index.html"
+                    class="text-sm font-medium text-slate-600 hover:text-primary-700 transition relative duration-300 after:absolute after:bottom-[-4px] after:left-0
+                                   after:h-[2px] after:w-0 after:bg-yellow-500
+                                   after:transition-all after:duration-300 hover:after:w-full"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="about.html"
+                    class="text-sm font-semibold text-primary-700 relative duration-300 after:absolute after:bottom-[-4px] after:left-0
+                                   after:h-[2px] after:w-0 after:bg-yellow-500
+                                   after:transition-all after:duration-300 hover:after:w-full"
+                >
+                    About
+                </a>
+
+                <a
+                    href="services.html"
+                    class="text-sm font-medium text-slate-600 hover:text-primary-700 transition relative duration-300 after:absolute after:bottom-[-4px] after:left-0
+                                   after:h-[2px] after:w-0 after:bg-yellow-500
+                                   after:transition-all after:duration-300 hover:after:w-full"
+                >
+                    Services
+                </a>
+
+                <a
+                    href="expertise.html"
+                    class="text-sm font-medium text-slate-600 hover:text-primary-700 transition relative duration-300 after:absolute after:bottom-[-4px] after:left-0
+                                   after:h-[2px] after:w-0 after:bg-yellow-500
+                                   after:transition-all after:duration-300 hover:after:w-full"
+                >
+                    Expertise & Insights
+                </a>
+
+                <a
+                    href="contact.html"
+                    class="text-sm font-medium text-slate-600 hover:text-primary-700 transition relative duration-300 after:absolute after:bottom-[-4px] after:left-0
+                                   after:h-[2px] after:w-0 after:bg-yellow-500
+                                   after:transition-all after:duration-300 hover:after:w-full"
+                >
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- CTA -->
+            <div class="hidden lg:block">
+
+                <a
+                    href="contact.html"
+                    class="inline-flex items-center gap-2 bg-navy text-white px-5 py-3 rounded-lg text-sm font-semibold hover:bg-primary-800 transition"
+                >
+                    Request a Consultation
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+            <!-- Mobile Menu Button -->
+            <button
+                id="menu-button"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                class="lg:hidden w-11 h-11 rounded-lg border border-slate-200 flex items-center justify-center"
+            >
+
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+
+            </button>
+
+        </div>
+
+
+        <!-- Mobile Menu -->
+        <div
+            id="mobile-menu"
+            class="mobile-menu lg:hidden"
+        >
+
+            <nav class="py-5 border-t border-slate-100 space-y-1">
+
+                <a
+                    href="index.html"
+                    class="block px-4 py-3 rounded-lg text-slate-700 hover:bg-slate-50"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="about.html"
+                    class="block px-4 py-3 rounded-lg bg-primary-50 text-primary-700 font-semibold"
+                >
+                    About
+                </a>
+
+                <a
+                    href="services.html"
+                    class="block px-4 py-3 rounded-lg text-slate-700 hover:bg-slate-50"
+                >
+                    Services
+                </a>
+
+                <a
+                    href="expertise.html"
+                    class="block px-4 py-3 rounded-lg text-slate-700 hover:bg-slate-50"
+                >
+                    Expertise & Insights
+                </a>
+
+                <a
+                    href="contact.html"
+                    class="block px-4 py-3 rounded-lg text-slate-700 hover:bg-slate-50"
+                >
+                    Contact
+                </a>
+
+                <a
+                    href="contact.html"
+                    class="block mt-3 text-center bg-navy text-white px-4 py-3 rounded-lg font-semibold"
+                >
+                    Request a Consultation
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     PAGE HERO
+========================================================= -->
+
+<section class="page-hero pt-20">
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+
+        <div class="min-h-[500px] flex items-center">
+
+            <div class="max-w-3xl text-white">
+
+                <div
+                    class="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-7"
+                >
+
+                    <span class="w-2 h-2 rounded-full bg-gold"></span>
+
+                    <span class="text-sm font-medium text-white/90">
+                        About Our Firm
+                    </span>
+
+                </div>
+
+
+                <h1
+                    class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight"
+                >
+                    Knowledge That Creates
+                    <span class="text-gold">
+                        Meaningful Impact.
+                    </span>
+                </h1>
+
+
+                <p class="mt-6 max-w-2xl text-lg text-white/70 leading-8">
+
+                    Discover the people, values and professional approach
+                    behind Hub of Knowledge and Enlightenment Consultancy Firm
+                    Sierra Leone Limited.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================================================
+     WHO WE ARE
+========================================================= -->
+
+<section class="py-24 lg:py-32 bg-white">
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+
+        <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+
+            <!-- Content -->
+            <div class="reveal">
+
+                <p class="text-sm uppercase tracking-[0.18em] font-bold text-primary-700">
+                    Who We Are
+                </p>
+
+
+                <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy tracking-tight">
+                    A Hub Built Around Knowledge, Excellence and Impact
+                </h2>
+
+
+                <p class="mt-6 text-slate-600 leading-8">
+
+                    Hub of Knowledge and Enlightenment Consultancy Firm Sierra
+                    Leone Limited is a professional consultancy firm committed
+                    to providing quality consultancy and advisory services.
+
+                </p>
+
+
+                <p class="mt-4 text-slate-600 leading-8">
+
+                    The firm has provided quality services to CBOs, NGOs and
+                    private entities, supporting organisations with knowledge,
+                    professional expertise and practical solutions.
+
+                </p>
+
+
+                <p class="mt-4 text-slate-600 leading-8">
+
+                    Our work is built around the belief that professional
+                    knowledge should translate into practical solutions,
+                    stronger institutions, better decisions and meaningful
+                    development outcomes.
+
+                </p>
+
+
+                <div class="mt-8 flex flex-wrap gap-3">
+
+                    <span class="px-4 py-2 rounded-full bg-primary-50 text-primary-700 text-sm font-semibold">
+                        Consultancy
+                    </span>
+
+                    <span class="px-4 py-2 rounded-full bg-primary-50 text-primary-700 text-sm font-semibold">
+                        Advisory
+                    </span>
+
+                    <span class="px-4 py-2 rounded-full bg-primary-50 text-primary-700 text-sm font-semibold">
+                        Research
+                    </span>
+
+                    <span class="px-4 py-2 rounded-full bg-primary-50 text-primary-700 text-sm font-semibold">
+                        Training
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Image -->
+            <div class="relative reveal">
+
+                <div class="rounded-2xl overflow-hidden">
+
+                    <img
+                        src="images/IMG-20260821-WA0004.jpg"
+                        alt="Hub of Knowledge professional engagement"
+                        class="w-full h-[520px] object-cover"
+                    >
+
+                </div>
+
+
+                <div
+                    class="absolute -bottom-7 -left-5 sm:-left-8 bg-navy text-white rounded-xl p-6 shadow-xl max-w-[290px]"
+                >
+
+                    <p class="text-xs uppercase tracking-widest text-gold font-bold">
+                        Our Commitment
+                    </p>
+
+                    <p class="mt-2 text-lg font-bold leading-7">
+                        Creating impact for all good reasons.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROFESSIONAL CAPACITY
+========================================================= -->
+
+<section class="py-24 lg:py-28 bg-slate-50">
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+
+        <div class="max-w-3xl reveal">
+
+            <p class="text-sm uppercase tracking-[0.18em] font-bold text-primary-700">
+                Professional Capacity
+            </p>
+
+            <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold text-navy">
+                Expertise Backed by Professional Development
+            </h2>
+
+            <p class="mt-5 text-slate-600 leading-8">
+
+                Our staff bring professional backgrounds and qualifications
+                that support the quality of the consultancy services we provide.
+
+            </p>
+
+        </div>
+
+
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+
+            <div class="reveal bg-white rounded-2xl border border-slate-100 p-7 shadow-soft">
+
+                <div class="text-3xl font-extrabold text-primary-700">
+                    ICM
+                </div>
+
+                <h3 class="mt-4 font-bold text-navy">
+                    Institute of Commercial Management
+                </h3>
+
+                <p class="mt-2 text-sm text-slate-500 leading-6">
+                    Professional fellowship associated with ICM UK.
+                </p>
+
+            </div>
+
+
+            <div class="reveal bg-white rounded-2xl border border-slate-100 p-7 shadow-soft">
+
+                <div class="text-3xl font-extrabold text-primary-700">
+                    MSc
+                </div>
+
+                <h3 class="mt-4 font-bold text-navy">
+                    Advanced Professional Knowledge
+                </h3>
+
+                <p class="mt-2 text-sm text-slate-500 leading-6">
+                    Staff with Master's-level academic qualifications.
+                </p>
+
+            </div>
+
+
+            <div class="reveal bg-white rounded-2xl border border-slate-100 p-7 shadow-soft">
+
+                <div class="text-3xl font-extrabold text-primary-700">
+                    MBA
+                </div>
+
+                <h3 class="mt-4 font-bold text-navy">
+                    Business & Management
+                </h3>
+
+                <p class="mt-2 text-sm text-slate-500 leading-6">
+                    Management and business-focused expertise.
+                </p>
+
+            </div>
+
+
+            <div class="reveal bg-white rounded-2xl border border-slate-100 p-7 shadow-soft">
+
+                <div class="text-3xl font-extrabold text-primary-700">
+                    BSc
+                </div>
+
+                <h3 class="mt-4 font-bold text-navy">
+                    Professional Foundations
+                </h3>
+
+                <p class="mt-2 text-sm text-slate-500 leading-6">
+                    Diverse academic and professional backgrounds.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MISSION & VISION
+========================================================= -->
+
+<section class="py-24 lg:py-32 bg-white">
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+
+        <div class="grid lg:grid-cols-2 gap-6">
+
+
+            <!-- Mission -->
+            <article
+                class="reveal rounded-2xl bg-navy text-white p-8 sm:p-10 lg:p-12"
+            >
+
+                <div
+                    class="w-12 h-12 rounded-xl bg-white/10 text-gold flex items-center justify-center"
+                >
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="23"
+                        height="23"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path d="M12 2v20"></path>
+                        <path d="M2 12h20"></path>
+                        <circle cx="12" cy="12" r="9"></circle>
+                    </svg>
+
+                </div>
+
+
+                <p class="mt-8 text-sm uppercase tracking-[0.18em] text-gold font-bold">
+                    Our Mission
+                </p>
+
+
+                <h2 class="mt-4 text-2xl sm:text-3xl font-extrabold">
+                    Delivering Quality Consultancy Services
+                </h2>
+
+
+                <p class="mt-5 text-white/65 leading-8">
+
+                    We are committed to delivering quality consultancy and
+                    professional services that provide practical value to
+                    organisations and contribute to positive outcomes.
+
+                </p>
+
+            </article>
+
+
+            <!-- Vision -->
+            <article
+                class="reveal rounded-2xl border border-slate-100 bg-slate-50 p-8 sm:p-10 lg:p-12"
+            >
+
+                <div
+                    class="w-12 h-12 rounded-xl bg-primary-100 text-primary-700 flex items-center justify-center"
+                >
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="23"
+                        height="23"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12Z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+
+                </div>
+
+
+                <p class="mt-8 text-sm uppercase tracking-[0.18em] text-primary-700 font-bold">
+                    Our Vision
+                </p>
+
+
+                <h2 class="mt-4 text-2xl sm:text-3xl font-extrabold text-navy">
+                    Knowledge, Enlightenment and Sustainable Impact
+                </h2>
+
+
+                <p class="mt-5 text-slate-600 leading-8">
+
+                    We aspire to contribute to stronger institutions,
+                    empowered professionals and sustainable development
+                    through knowledge, innovation, professional excellence
+                    and meaningful collaboration.
+
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CORE VALUES
+========================================================= -->
+
+<section class="py-24 lg:py-32 bg-slate-50">
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+
+        <div class="max-w-3xl reveal">
+
+            <p class="text-sm uppercase tracking-[0.18em] font-bold text-primary-700">
+                What Guides Us
+            </p>
+
+            <h2 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy">
+                Our Core Values
+            </h2>
+
+            <p class="mt-5 text-slate-600 leading-8">
+
+                Our values shape how we work, how we engage our clients and
+                how we pursue meaningful professional outcomes.
+
+            </p>
+
+        </div>
+
+
+        <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+
+            <article class="reveal bg-white rounded-2xl border border-slate-100 p-7 shadow-soft">
+
+                <span class="text-gold font-extrabold text-2xl">
+                    01
+                </span>
+
+                <h3 class="mt-5 text-xl font-bold text-navy">
+                    Professionalism
+                </h3>
+
+                <p class="mt-3 text-slate-500 leading-7">
+                    We take pride in the quality and professionalism of the
+                    services we provide.
+                </p>
+
+            </article>
+
+
+            <article class="reveal bg-white rounded-2xl border border-slate-100 p-7 shadow-soft">
+
+                <span class="text-gold font-extrabold text-2xl">
+                    02
+                </span>
+
+                <h3 class="mt-5 text-xl font-bold text-navy">
+                    Integrity
+                </h3>
+
+                <p class="mt-3 text-slate-500 leading-7">
+                    We value responsible, transparent and trustworthy
+                    professional relationships.
+                </p>
+
+            </article>
+
+
+            <article class="reveal bg-white rounded-2xl border border-slate-100 p-7 shadow-soft">
+
+                <span class="text-gold font-extrabold text-2xl">
+                    03
+                </span>
+
+                <h3 class="mt-5 text-xl font-bold text-navy">
+                    Excellence
+                </h3>
+
+                <p class="mt-3 text-slate-500 leading-7">
+                    We continuously seek to improve the quality and value of
+                    our work.
+                </p>
+
+            </article>
+
+
+            <article class="reveal bg-white rounded-2xl border border-slate-100 p-7 shadow-soft">
+
+                <span class="text-gold font-extrabold text-2xl">
+                    04
+                </span>
+
+                <h3 class="mt-5 text-xl font-bold text-navy">
+                    Innovation
+                </h3>
+
+                <p class="mt-3 text-slate-500 leading-7">
+                    We encourage practical thinking and approaches that
+                    respond to changing organisational needs.
+                </p>
+
+            </article>
+
+
+            <article class="reveal bg-white rounded-2xl border border-slate-100 p-7 shadow-soft">
+
+                <span class="text-gold font-extrabold text-2xl">
+                    05
+                </span>
+
+                <h3 class="mt-5 text-xl font-bold text-navy">
+                    Impact
+                </h3>
+
+                <p class="mt-3 text-slate-500 leading-7">
+                    We focus on creating useful outcomes and positive value
+                    through our engagements.
+                </p>
+
+            </article>
+
+
+            <article class="reveal bg-navy rounded-2xl p-7 shadow-soft text-white">
+
+                <span class="text-gold font-extrabold text-2xl">
+                    06
+                </span>
+
+                <h3 class="mt-5 text-xl font-bold">
+                    Collaboration
+                </h3>
+
+                <p class="mt-3 text-white/60 leading-7">
+                    We believe meaningful results are strengthened through
+                    partnership, dialogue and shared knowledge.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WHO WE SERVE
+========================================================= -->
+
+<section class="py-24 lg:py-32 bg-white">
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+
+        <div class="grid lg:grid-cols-12 gap-12">
+
+
+            <!-- Introduction -->
+            <div class="lg:col-span-5 reveal">
+
+                <p class="text-sm uppercase tracking-[0.18em] font-bold text-primary-700">
+                    Who We Serve
+                </p>
+
+
+                <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">
+                    Supporting Organisations Across Sectors
+                </h2>
+
+
+                <p class="mt-5 text-slate-600 leading-8">
+
+                    We welcome opportunities for partnership and collaboration
+                    with institutions, organisations and businesses seeking
+                    professional expertise and practical solutions.
+
+                </p>
+
+
+                <p class="mt-4 text-slate-600 leading-8">
+
+                    Our experience includes providing services to CBOs, NGOs
+                    and private entities, while our consultancy approach can
+                    support a wider range of institutions and organisations.
+
+                </p>
+
+
+                <a
+                    href="contact.html"
+                    class="inline-flex items-center gap-2 mt-8 text-primary-700 font-bold hover:gap-3 transition-all"
+                >
+
+                    Discuss Your Organisation's Needs
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+
+                </a>
+
+            </div>
+
+
+            <!-- Sectors -->
+            <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4">
+
+
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 reveal">
+
+                    <div class="w-10 h-10 rounded-lg bg-primary-100 text-primary-700 flex items-center justify-center">
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path d="M3 21h18"></path>
+                            <path d="M5 21V7l7-4 7 4v14"></path>
+                            <path d="M9 21v-4h6v4"></path>
+                        </svg>
+
+                    </div>
+
+                    <p class="mt-5 font-bold text-navy">
+                        Government Institutions
+                    </p>
+
+                    <p class="mt-2 text-sm text-slate-500 leading-6">
+                        Ministries, departments, agencies and other public
+                        institutions.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 reveal">
+
+                    <div class="w-10 h-10 rounded-lg bg-primary-100 text-primary-700 flex items-center justify-center">
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path d="M12 3 4 7v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7l-8-4Z"></path>
+                            <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+
+                    </div>
+
+                    <p class="mt-5 font-bold text-navy">
+                        NGOs & CBOs
+                    </p>
+
+                    <p class="mt-2 text-sm text-slate-500 leading-6">
+                        Development organisations and community-based
+                        organisations.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 reveal">
+
+                    <div class="w-10 h-10 rounded-lg bg-primary-100 text-primary-700 flex items-center justify-center">
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path d="M3 21h18"></path>
+                            <path d="M5 21V9l7-6 7 6v12"></path>
+                            <path d="M9 21v-6h6v6"></path>
+                        </svg>
+
+                    </div>
+
+                    <p class="mt-5 font-bold text-navy">
+                        Private-Sector Companies
+                    </p>
+
+                    <p class="mt-2 text-sm text-slate-500 leading-6">
+                        Businesses seeking professional advisory and
+                        organisational support.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 reveal">
+
+                    <div class="w-10 h-10 rounded-lg bg-primary-100 text-primary-700 flex items-center justify-center">
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"></path>
+                        </svg>
+
+                    </div>
+
+                    <p class="mt-5 font-bold text-navy">
+                        Education & Professional Institutions
+                    </p>
+
+                    <p class="mt-2 text-sm text-slate-500 leading-6">
+                        Institutions seeking training, research and
+                        professional development support.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 reveal">
+
+                    <div class="w-10 h-10 rounded-lg bg-primary-100 text-primary-700 flex items-center justify-center">
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <path d="M12 8v4l3 2"></path>
+                        </svg>
+
+                    </div>
+
+                    <p class="mt-5 font-bold text-navy">
+                        Financial & Professional Bodies
+                    </p>
+
+                    <p class="mt-2 text-sm text-slate-500 leading-6">
+                        Organisations requiring specialised advisory and
+                        institutional support.
+                    </p>
+
+                </div>
+
+
+                <div class="bg-navy rounded-xl p-6 reveal text-white">
+
+                    <p class="text-gold text-sm font-bold uppercase tracking-widest">
+                        Partnership
+                    </p>
+
+                    <p class="mt-4 text-lg font-bold">
+                        Have a challenge we can help solve?
+                    </p>
+
+                    <a
+                        href="contact.html"
+                        class="inline-flex items-center gap-2 mt-5 text-sm font-bold text-white"
+                    >
+                        Start a conversation
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="17"
+                            height="17"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     LEADERSHIP
+========================================================= -->
+
+<section class="py-24 lg:py-32 bg-slate-50">
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+
+            <!-- Image -->
+            <div class="relative reveal">
+
+                <img
+                    src="images/IMG-20260821-WA0002.jpg"
+                    alt="Mr. Samuel Karim, Chief Executive Officer"
+                    class="w-full h-[520px] object-cover rounded-2xl"
+                >
+
+                <div
+                    class="absolute bottom-6 left-6 right-6 glass rounded-xl p-5 text-white"
+                >
+
+                    <p class="text-xs uppercase tracking-widest text-gold font-bold">
+                        Leadership
+                    </p>
+
+                    <p class="mt-1 font-bold">
+                        Mr. Samuel Karim
+                    </p>
+
+                    <p class="text-sm text-white/60">
+                        Chief Executive Officer
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Message -->
+            <div class="reveal">
+
+                <p class="text-sm uppercase tracking-[0.18em] font-bold text-primary-700">
+                    Leadership Message
+                </p>
+
+
+                <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold text-navy">
+                    Professional Responsibility Is at the Heart of Our Work
+                </h2>
+
+
+                <div class="mt-7 border-l-4 border-gold pl-6">
+
+                    <p class="text-xl font-semibold text-navy leading-9">
+
+                        “We take pride in what we do, and we create impacts
+                        for all good reasons.”
+
+                    </p>
+
+                </div>
+
+
+                <p class="mt-7 text-slate-600 leading-8">
+
+                    Our commitment is to provide professional consultancy
+                    services that create value for our clients and contribute
+                    to meaningful institutional and organisational outcomes.
+
+                </p>
+
+
+                <div class="mt-8">
+
+                    <p class="font-bold text-navy">
+                        Mr. Samuel Karim
+                    </p>
+
+                    <p class="text-sm text-slate-500 mt-1">
+                        Chief Executive Officer
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="py-24 bg-navy">
+
+    <div class="max-w-4xl mx-auto px-5 sm:px-8 lg:px-10 text-center">
+
+        <div class="reveal">
+
+            <p class="text-sm uppercase tracking-[0.2em] text-gold font-bold">
+                Work With Us
+            </p>
+
+
+            <h2 class="mt-5 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+                Let's Turn Knowledge Into Impact.
+            </h2>
+
+
+            <p class="mt-5 text-white/60 leading-8 max-w-2xl mx-auto">
+
+                Whether you need consultancy, training, research, advisory
+                support or organisational development, we welcome the
+                opportunity to understand your needs.
+
+            </p>
+
+
+            <div class="mt-9 flex flex-col sm:flex-row justify-center gap-4">
+
+                <a
+                    href="contact.html"
+                    class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-gold text-navy font-bold hover:bg-yellow-300 transition"
+                >
+                    Request a Consultation
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+
+                </a>
+
+
+                <a
+                    href="tel:+23230197253"
+                    class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg border border-white/20 text-white font-semibold hover:bg-white/10 transition"
+                >
+                    Call +232 30 197253
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="bg-[#041f3f] text-white">
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+
+        <div class="py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+
+            <!-- Brand -->
+            <div>
+
+                <a
+                    href="index.html"
+                    class="flex items-center gap-3"
+                >
+
+                    <div class="w-12 h-12 rounded-xl overflow-hidden bg-white">
+
+                        <img
+                            src="assets/images/logo.png"
+                            alt="Hub of Knowledge logo"
+                            class="w-full h-full object-contain"
+                        >
+
+                    </div>
+
+                    <div>
+
+                        <p class="font-bold text-sm">
+                            Hub of Knowledge
+                        </p>
+
+                        <p class="text-[10px] text-white/50">
+                            & Enlightenment Consultancy Firm
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <p class="mt-6 text-sm text-white/55 leading-7">
+
+                    Professional consultancy and advisory services supporting
+                    stronger institutions, empowered people and sustainable
+                    development in Sierra Leone.
+
+                </p>
+
+
+                <p class="mt-6 text-gold text-sm font-semibold">
+                    Knowledge. Excellence. Innovation. Impact.
+                </p>
+
+            </div>
+
+
+            <!-- Quick Links -->
+            <div>
+
+                <h3 class="font-bold">
+                    Quick Links
+                </h3>
+
+                <ul class="mt-5 space-y-3 text-sm text-white/55">
+
+                    <li>
+                        <a
+                            href="index.html"
+                            class="hover:text-gold transition"
+                        >
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="about.html"
+                            class="hover:text-gold transition"
+                        >
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="services.html"
+                            class="hover:text-gold transition"
+                        >
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="expertise.html"
+                            class="hover:text-gold transition"
+                        >
+                            Expertise & Insights
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="contact.html"
+                            class="hover:text-gold transition"
+                        >
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Services -->
+            <div>
+
+                <h3 class="font-bold">
+                    Our Expertise
+                </h3>
+
+                <ul class="mt-5 space-y-3 text-sm text-white/55">
+
+                    <li>Management Consultancy</li>
+                    <li>Financial Management</li>
+                    <li>Auditing & Internal Controls</li>
+                    <li>Research & Development</li>
+                    <li>Monitoring & Evaluation</li>
+                    <li>Human Resource Development</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Contact -->
+            <div>
+
+                <h3 class="font-bold">
+                    Contact
+                </h3>
+
+
+                <div class="mt-5 space-y-5 text-sm">
+
+
+                    <div class="flex gap-3">
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="19"
+                            height="19"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            class="text-gold shrink-0"
+                        >
+                            <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+
+                        <span class="text-white/55">
+                            Freetown City,<br>
+                            Republic of Sierra Leone
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex gap-3">
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="19"
+                            height="19"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            class="text-gold shrink-0"
+                        >
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+                            19.79 19.79 0 0 1-8.63-3.07
+                            19.5 19.5 0 0 1-6-6
+                            19.79 19.79 0 0 1-3.07-8.67
+                            A2 2 0 0 1 4.11 2h3
+                            a2 2 0 0 1 2 1.72
+                            12.84 12.84 0 0 0 .7 2.81
+                            2 2 0 0 1-.45 2.11L8.09 9.91
+                            a16 16 0 0 0 6 6l1.27-1.27
+                            a2 2 0 0 1 2.11-.45
+                            12.84 12.84 0 0 0 2.81.7
+                            A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+
+                        <a
+                            href="tel:+23230197253"
+                            class="text-white/55 hover:text-gold transition"
+                        >
+                            +232 30 197253
+                        </a>
+
+                    </div>
+
+
+                    <div class="flex gap-3">
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="19"
+                            height="19"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            class="text-gold shrink-0"
+                        >
+                            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+
+                        <div class="space-y-1">
+
+                            <a
+                                href="mailto:hubofknowledgeandenlightenment@gmail.com"
+                                class="block text-white/55 hover:text-gold transition break-all"
+                            >
+                                hubofknowledgeandenlightenment@gmail.com
+                            </a>
+
+                            <a
+                                href="mailto:samuelkarim94s@gmail.com"
+                                class="block text-white/55 hover:text-gold transition"
+                            >
+                                samuelkarim94s@gmail.com
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer Bottom -->
+        <div class="border-t border-white/10 py-6 flex flex-col md:flex-row items-center justify-center gap-4">
+
+            <p class="text-xs text-white/40 text-center">
+                © 2026 Hub of Knowledge and Enlightenment Consultancy Firm
+                Sierra Leone Limited. All rights reserved.
+            </p>
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    /*
+     * Mobile navigation
+     */
+
+    const menuButton =
+        document.getElementById('menu-button');
+
+    const mobileMenu =
+        document.getElementById('mobile-menu');
+
+
+    menuButton.addEventListener('click', () => {
+
+        const isOpen =
+            mobileMenu.classList.toggle('open');
+
+        menuButton.setAttribute(
+            'aria-expanded',
+            isOpen
+        );
+
+    });
+
+
+    /*
+     * Close mobile navigation after clicking a link
+     */
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+
+        link.addEventListener('click', () => {
+
+            mobileMenu.classList.remove('open');
+
+            menuButton.setAttribute(
+                'aria-expanded',
+                'false'
+            );
+
+        });
+
+    });
+
+
+    /*
+     * Scroll reveal
+     */
+
+    const revealElements =
+        document.querySelectorAll('.reveal');
+
+
+    const revealObserver =
+        new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add('active');
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    revealElements.forEach(element => {
+
+        revealObserver.observe(element);
+
+    });
+
+
+    /*
+     * Header shadow
+     */
+
+    const header =
+        document.getElementById('site-header');
+
+
+    window.addEventListener('scroll', () => {
+
+        if (window.scrollY > 20) {
+
+            header.classList.add('nav-shadow');
+
+        } else {
+
+            header.classList.remove('nav-shadow');
+
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
