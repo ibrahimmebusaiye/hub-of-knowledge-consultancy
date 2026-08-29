@@ -19,6 +19,13 @@
         content="Contact Hub of Knowledge and Enlightenment Consultancy Firm Sierra Leone Limited for consultancy, training, research, advisory and professional development services."
     >
 
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact Hub of Knowledge &amp; Enlightenment">
+    <meta property="og:description" content="Contact the firm about consultancy, training, research, advisory and professional development services.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ibrahimmebusaiye/hub-of-knowledge-consultancy/main/public/og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/ibrahimmebusaiye/hub-of-knowledge-consultancy/main/public/og.png">
+
     <!-- =====================================================
          TAILWIND CSS
     ====================================================== -->
@@ -1387,6 +1394,34 @@
 
 
 
+                        <!-- SUBJECT -->
+
+                        <div
+                            class="mt-5"
+                        >
+
+                            <label
+                                for="subject"
+                                class="block text-sm font-semibold text-navy mb-2"
+                            >
+                                Subject
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                class="form-input"
+                                placeholder="What would you like to discuss?"
+                                maxlength="200"
+                                required
+                            >
+
+                        </div>
+
+
+
                         <!-- MESSAGE -->
 
                         <div
@@ -1412,6 +1447,12 @@
                         </div>
 
 
+                        <div class="hidden" aria-hidden="true">
+                            <label for="website">Website</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
+
+
 
                         <!-- SUBMIT -->
 
@@ -1427,6 +1468,8 @@
                             ></i>
 
                         </button>
+
+                        <p id="form-message" class="mt-4 text-sm text-center" role="status" aria-live="polite"></p>
                     </form>
 
                 </div>
@@ -2236,6 +2279,8 @@ ${message}`
 </script>
 
 
+<script src="/js/analytics.js" defer></script>
+<script src="/js/contact.js" defer></script>
 </body>
 
 </html>
