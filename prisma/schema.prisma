@@ -1,0 +1,164 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum AdminRole {
+  OWNER
+  ADMIN
+}
+
+enum MessageStatus {
+  NEW
+  READ
+  REPLIED
+  ARCHIVED
+}
+
+enum AnalyticsEventType {
+  PAGE_VIEW
+  SESSION_START
+  CONTACT_SUBMISSION
+}
+
+enum DeviceCategory {
+  MOBILE
+  TABLET
+  DESKTOP
+  UNKNOWN
+}
+
+model Admin {
+  id                 String               @id @default(uuid()) @db.Uuid
+  name               String               @db.VarChar(120)
+  email              String               @unique @db.VarChar(320)
+  passwordHash       String               @map("password_hash")
+  role               AdminRole            @default(ADMIN)
+  active             Boolean              @default(true)
+  mustChangePassword Boolean              @default(true) @map("must_change_password")
+  lastLoginAt        DateTime?             @map("last_login_at") @db.Timestamptz(3)
+  createdAt          DateTime              @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt          DateTime              @updatedAt @map("updated_at") @db.Timestamptz(3)
+  sessions           AdminSession[]
+  auditLogs          AuditLog[]
+
+  @@map("admins")
+}
+
+model AdminSession {
+  id            String   @id @default(uuid()) @db.Uuid
+  adminId       String   @map("admin_id") @db.Uuid
+  tokenHash     String   @unique @map("token_hash") @db.Char(64)
+  ipHash        String?  @map("ip_hash") @db.Char(64)
+  userAgentHash String?  @map("user_agent_hash") @db.Char(64)
+  expiresAt     DateTime @map("expires_at") @db.Timestamptz(3)
+  lastSeenAt    DateTime @default(now()) @map("last_seen_at") @db.Timestamptz(3)
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  admin         Admin    @relation(fields: [adminId], references: [id], onDelete: Cascade)
+
+  @@index([adminId, expiresAt])
+  @@index([expiresAt])
+  @@map("admin_sessions")
+}
+
+model ContactMessage {
+  id                  String          @id @default(uuid()) @db.Uuid
+  analyticsSessionId  String?         @map("analytics_session_id") @db.Uuid
+  name                String          @db.VarChar(120)
+  organisation        String?         @db.VarChar(160)
+  email               String          @db.VarChar(320)
+  phone               String?         @db.VarChar(40)
+  service             String?         @db.VarChar(160)
+  subject             String          @db.VarChar(200)
+  message             String          @db.Text
+  status              MessageStatus   @default(NEW)
+  emailNotificationAt DateTime?       @map("email_notification_at") @db.Timestamptz(3)
+  emailDeliveryError  String?         @map("email_delivery_error") @db.VarChar(500)
+  createdAt           DateTime        @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt           DateTime        @updatedAt @map("updated_at") @db.Timestamptz(3)
+  analyticsSession    AnalyticsSession? @relation(fields: [analyticsSessionId], references: [id], onDelete: SetNull)
+
+  @@index([status, createdAt(sort: Desc)])
+  @@index([createdAt(sort: Desc)])
+  @@index([email])
+  @@map("contact_messages")
+}
+
+model AnalyticsSession {
+  id              String           @id @default(uuid()) @db.Uuid
+  sessionIdHash   String           @unique @map("session_id_hash") @db.Char(64)
+  visitorIdHash   String           @map("visitor_id_hash") @db.Char(64)
+  firstSeenAt     DateTime         @default(now()) @map("first_seen_at") @db.Timestamptz(3)
+  lastSeenAt      DateTime         @default(now()) @map("last_seen_at") @db.Timestamptz(3)
+  landingPage     String           @map("landing_page") @db.VarChar(500)
+  source          String           @db.VarChar(80)
+  referrerDomain  String?          @map("referrer_domain") @db.VarChar(255)
+  countryCode     String?          @map("country_code") @db.Char(2)
+  countryName     String?          @map("country_name") @db.VarChar(100)
+  deviceCategory  DeviceCategory   @default(UNKNOWN) @map("device_category")
+  browser         String?          @db.VarChar(80)
+  operatingSystem String?          @map("operating_system") @db.VarChar(80)
+  utmSource       String?          @map("utm_source") @db.VarChar(160)
+  utmMedium       String?          @map("utm_medium") @db.VarChar(160)
+  utmCampaign     String?          @map("utm_campaign") @db.VarChar(200)
+  utmContent      String?          @map("utm_content") @db.VarChar(200)
+  utmTerm         String?          @map("utm_term") @db.VarChar(200)
+  events          AnalyticsEvent[]
+  contactMessages ContactMessage[]
+
+  @@index([firstSeenAt])
+  @@index([lastSeenAt])
+  @@index([visitorIdHash, firstSeenAt])
+  @@index([source, firstSeenAt])
+  @@index([countryCode, firstSeenAt])
+  @@index([deviceCategory, firstSeenAt])
+  @@index([utmCampaign, firstSeenAt])
+  @@map("analytics_sessions")
+}
+
+model AnalyticsEvent {
+  id        String             @id @default(uuid()) @db.Uuid
+  sessionId String             @map("session_id") @db.Uuid
+  eventType AnalyticsEventType @map("event_type")
+  page      String             @db.VarChar(500)
+  pageTitle String?            @map("page_title") @db.VarChar(300)
+  createdAt DateTime           @default(now()) @map("created_at") @db.Timestamptz(3)
+  session   AnalyticsSession   @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  @@index([eventType, createdAt])
+  @@index([sessionId, createdAt])
+  @@index([page, createdAt])
+  @@map("analytics_events")
+}
+
+model RateLimitBucket {
+  id          String   @id @default(uuid()) @db.Uuid
+  keyHash     String   @map("key_hash") @db.Char(64)
+  route       String   @db.VarChar(80)
+  windowStart DateTime @map("window_start") @db.Timestamptz(3)
+  count       Int      @default(1)
+  expiresAt   DateTime @map("expires_at") @db.Timestamptz(3)
+
+  @@unique([keyHash, route, windowStart])
+  @@index([expiresAt])
+  @@map("rate_limit_buckets")
+}
+
+model AuditLog {
+  id         String   @id @default(uuid()) @db.Uuid
+  adminId    String?  @map("admin_id") @db.Uuid
+  action     String   @db.VarChar(100)
+  targetType String?  @map("target_type") @db.VarChar(80)
+  targetId   String?  @map("target_id") @db.VarChar(100)
+  details    Json?
+  createdAt  DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  admin      Admin?   @relation(fields: [adminId], references: [id], onDelete: SetNull)
+
+  @@index([adminId, createdAt(sort: Desc)])
+  @@index([action, createdAt(sort: Desc)])
+  @@map("audit_logs")
+}
