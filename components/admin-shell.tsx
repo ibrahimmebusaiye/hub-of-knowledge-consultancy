@@ -1,6 +1,6 @@
 "use client";
 
-import { BarChart3, Globe2, Inbox, LayoutDashboard, LogOut, MonitorSmartphone, Settings, ShieldCheck, Users } from "lucide-react";
+import { BarChart3, Globe2, Inbox, LayoutDashboard, LogOut, MonitorSmartphone, Settings, Users } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, type ReactNode } from "react";
@@ -21,7 +21,7 @@ export default function AdminShell({ children, admin }: { children: ReactNode; a
   return (
     <div className="admin-shell">
       <aside className="sidebar">
-        <Link className="brand" href="/admin" aria-label="Hub of Knowledge administration home"><div className="brand-mark"><ShieldCheck size={25} strokeWidth={2.2} aria-hidden="true" /></div><div className="brand-copy"><strong>Hub of Knowledge</strong><span>Consultancy Administration</span></div></Link>
+        <Link className="brand" href="/admin" aria-label="Hub of Knowledge administration home"><div className="brand-mark" aria-hidden="true"><span className="knowledge-node node-one"/><span className="knowledge-node node-two"/><span className="knowledge-node node-three"/><span className="knowledge-core"/></div><div className="brand-copy"><strong>Hub of Knowledge</strong><span>Consultancy Administration</span></div></Link>
         <nav>
           <p className="nav-label">Workspace</p>
           {navigation.map(({ href, label, icon: Icon }) => <Link className={`nav-item ${pathname === href ? "active" : ""}`} href={href} key={label}><Icon size={18} /> {label}</Link>)}

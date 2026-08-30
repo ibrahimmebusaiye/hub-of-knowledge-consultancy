@@ -20,7 +20,16 @@ a { color: inherit; text-decoration: none; }
 .admin-shell { min-height: 100vh; display: grid; grid-template-columns: 260px minmax(0, 1fr); }
 .sidebar { position: sticky; top: 0; height: 100vh; padding: 28px 20px; color: #fff; background: linear-gradient(180deg, var(--navy), var(--navy-deep)); display: flex; flex-direction: column; }
 .brand { display: flex; gap: 12px; align-items: center; padding: 0 8px 28px; border-bottom: 1px solid rgba(255,255,255,.14); }
-.brand-mark { width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.4); border-radius: 13px; background: linear-gradient(145deg, #fbd35c, var(--gold)); display: grid; place-items: center; color: var(--navy); box-shadow: 0 8px 18px rgba(0,0,0,.16); }
+.brand-mark { position: relative; isolation: isolate; width: 44px; height: 44px; overflow: hidden; border: 1px solid rgba(255,255,255,.42); border-radius: 13px; background: linear-gradient(145deg, #fbd35c, var(--gold)); box-shadow: 0 8px 18px rgba(0,0,0,.16); }
+.brand-mark::before, .brand-mark::after { content: ""; position: absolute; z-index: -1; height: 2px; width: 29px; top: 21px; left: 8px; border-radius: 2px; background: rgba(6,47,95,.7); transform-origin: center; }
+.brand-mark::before { transform: rotate(30deg); }
+.brand-mark::after { transform: rotate(-30deg); }
+.knowledge-node, .knowledge-core { position: absolute; display: block; border: 2px solid #062f5f; background: #fbd35c; }
+.knowledge-node { width: 10px; height: 10px; border-radius: 3px; transform: rotate(45deg); }
+.node-one { top: 8px; left: 17px; }
+.node-two { bottom: 8px; left: 7px; }
+.node-three { right: 7px; bottom: 8px; }
+.knowledge-core { width: 9px; height: 9px; top: 18px; left: 18px; border-radius: 50%; background: #062f5f; box-shadow: 0 0 0 3px rgba(255,255,255,.23); }
 .brand-copy strong { display: block; font-size: 14px; line-height: 1.25; }
 .brand-copy span { display: block; margin-top: 3px; font-size: 11px; color: #bfdbfe; }
 .nav-label { margin: 26px 12px 10px; color: #93c5fd; font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
