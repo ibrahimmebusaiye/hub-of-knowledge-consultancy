@@ -4,6 +4,7 @@ import { ApiError, apiError, noStoreJson } from "@/lib/api";
 import { db } from "@/lib/db";
 import { isTrustedMutation } from "@/lib/security";
 import { messageStatusSchema } from "@/lib/validation";
+import { sourceLabel } from "@/lib/analytics";
 
 type Context = { params: Promise<{ id: string }> };
 
@@ -12,7 +13,7 @@ export async function GET(request: NextRequest, context: Context) {
     await requireAdmin(request); const { id } = await context.params;
     const message = await db.contactMessage.findUnique({ where: { id }, include: { analyticsSession: { select: { source: true, countryName: true, deviceCategory: true, utmSource: true, utmMedium: true, utmCampaign: true } } } });
     if (!message) throw new ApiError(404, "Message not found.", "NOT_FOUND");
-    return noStoreJson({ success: true, data: message });
+    return noStoreJson({ success: true, data: { ...message, analyticsSession: message.analyticsSession ? { ...message.analyticsSession, source: sourceLabel(message.analyticsSession.source) } : null } });
   } catch (error) { return apiError(error); }
 }
 

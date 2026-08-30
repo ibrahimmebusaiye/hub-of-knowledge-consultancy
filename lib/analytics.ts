@@ -2,22 +2,33 @@ import { DeviceCategory } from "@prisma/client";
 import { UAParser } from "ua-parser-js";
 
 const knownSources: Array<[string, string]> = [
-  ["facebook.com", "Facebook"], ["fb.com", "Facebook"], ["instagram.com", "Instagram"],
-  ["linkedin.com", "LinkedIn"], ["google.", "Google"], ["youtube.com", "YouTube"],
-  ["youtu.be", "YouTube"], ["t.co", "X / Twitter"], ["twitter.com", "X / Twitter"],
-  ["whatsapp.com", "WhatsApp"], ["wa.me", "WhatsApp"], ["bing.com", "Bing"]
+  ["com.twitter.android", "X (Android app)"], ["com.twitter.ios", "X (iOS app)"], ["twitter.com", "X / Twitter"], ["x.com", "X / Twitter"], ["t.co", "X / Twitter"],
+  ["com.facebook.katana", "Facebook (Android app)"], ["com.facebook.orca", "Messenger (Android app)"], ["facebook.com", "Facebook"], ["fb.com", "Facebook"],
+  ["com.instagram.android", "Instagram (Android app)"], ["instagram.com", "Instagram"],
+  ["com.linkedin.android", "LinkedIn (Android app)"], ["linkedin.com", "LinkedIn"],
+  ["com.zhiliaoapp.musically", "TikTok (Android app)"], ["tiktok.com", "TikTok"],
+  ["com.snapchat.android", "Snapchat (Android app)"], ["snapchat.com", "Snapchat"],
+  ["com.reddit.frontpage", "Reddit (Android app)"], ["reddit.com", "Reddit"],
+  ["com.google.android.googlequicksearchbox", "Google app (Android)"], ["google.", "Google"],
+  ["com.google.android.youtube", "YouTube (Android app)"], ["youtube.com", "YouTube"], ["youtu.be", "YouTube"],
+  ["com.whatsapp", "WhatsApp"], ["whatsapp.com", "WhatsApp"], ["wa.me", "WhatsApp"], ["bing.com", "Bing"]
 ];
 
 export function classifySource(referrer?: string, utmSource?: string) {
   if (utmSource) return cleanLabel(utmSource);
   if (!referrer) return "Direct";
   try {
-    const hostname = new URL(referrer).hostname.toLowerCase().replace(/^www\./, "");
-    const match = knownSources.find(([needle]) => hostname.includes(needle));
-    return match?.[1] ?? hostname;
+    return sourceLabel(new URL(referrer).hostname);
   } catch {
-    return "Direct";
+    return sourceLabel(referrer);
   }
+}
+
+export function sourceLabel(value?: string | null) {
+  const normalized = cleanLabel(value ?? "").toLowerCase().replace(/^www\./, "");
+  if (!normalized) return "Direct";
+  const match = knownSources.find(([needle]) => normalized.includes(needle));
+  return match?.[1] ?? cleanLabel(value ?? "");
 }
 
 export function referrerDomain(referrer?: string) {
